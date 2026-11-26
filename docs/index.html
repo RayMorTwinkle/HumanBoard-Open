@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101925">
+<title>HumanBoard · 人与 Agent 的版本画板</title>
+<meta name="description" content="在本地画板里保留原稿、并排审阅 Agent 提案，沿版本历史回看每次决定。附结构图编译器的可复现实验。">
+<link rel="stylesheet" href="showcase.css">
+<script src="showcase.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="mast"><div class="wrap nav"><a class="brand" href="#main"><i class="brandmark" aria-hidden="true"></i>HumanBoard</a><nav aria-label="站内导航"><a href="#replay">版本回放</a><a href="#film">短片</a><a href="#evidence">工程实测</a><a class="run" href="#start">本地运行</a></nav></div></header>
+<main id="main">
+<section class="hero" id="replay"><div class="wrap hero-grid">
+<div class="pitch"><p class="eyebrow"><span class="line"></span> 人机协作画板</p>
+<h1>把 Agent 的<br>改稿放进<span>分支。</span></h1>
+<p class="dek">你继续画，Agent 另开一版。把两份修改放回同一张画布，决定哪一版进入主线。</p>
+<a class="button lime" href="#start">启动本地画板</a><a class="text-link" href="#film">看中文短片</a>
+</div>
+<div class="demo-shell" aria-label="交互式版本回放">
+<div class="filebar"><span class="fileicon" aria-hidden="true"></span><strong>工作坊 / 策展草图</strong><span class="sample">分支示意</span></div>
+<div class="board" id="board" data-rev="agent">
+<div class="board-id">BOARD &nbsp;/&nbsp; 策展动线</div>
+<div class="board-track tr-main" aria-hidden="true"></div><div class="board-track tr-prop" aria-hidden="true"></div>
+<div class="card entry"><small>起点</small><strong>入口</strong></div>
+<div class="card room"><small>主空间</small><strong id="room">展厅</strong></div>
+<div class="card bench" id="bench"><small>休息区</small><strong>听众留言</strong></div>
+<div class="cursor-tag" id="cursor" aria-hidden="true">Agent</div>
+</div>
+<fieldset class="revision"><legend>选择回放位置</legend>
+<button type="button" data-revision="base" aria-pressed="false">共同起点</button>
+<button type="button" data-revision="human" aria-pressed="false">人的主线</button>
+<button type="button" data-revision="agent" aria-pressed="true">Agent 提案</button>
+<button type="button" data-revision="merge" aria-pressed="false">合并结果</button>
+</fieldset>
+<p class="revision-note" id="revision-note" aria-live="polite">Agent 在提案分支增设「听众留言」，主线仍可编辑。</p>
+</div></div></section>
+
+<section class="film section" id="film"><div class="wrap thirds"><div><p class="kicker">影片 / FILM</p><h2>一次改稿的<br>来龙去脉。</h2><p class="copy">从原稿、草图到候选版本，跟着画板走一遍人和 Agent 的交接。片中演绎完整画板；Open 版可实际操作卡片、分支与合并。</p></div>
+<figure class="player"><video preload="metadata" controls playsinline aria-label="HumanBoard 中文宣传片" poster="media/poster.jpg"><source src="media/promo.mp4" type="video/mp4">浏览器无法播放此视频。</video><figcaption>HumanBoard · 中文短片 <a href="media/promo.mp4" download>下载影片</a></figcaption></figure></div></section>
+<section class="evidence section" id="evidence"><div class="wrap thirds"><div><p class="kicker">实验 / LAYOUT ENGINE</p><h2>重排深链时，<br>时间花在哪？</h2><p class="copy">一张图可以只有一条路径，却让排版器反复走过同一棵子树。以下结果来自原 TypeScript 引擎的离线对照。</p></div>
+<div class="paper"><h3>固定输入，复核输出</h3><p id="evidence-summary">同一台 M1 Max，每臂预热 2 轮，交替计时 10 轮。四组输入的完整 Scene 摘要前后一致。</p>
+<div class="measure"><span>500 节点深链思维图</span><strong>664.41 → 2.11 ms</strong><small>备份 → 重构 · 单次编译中位数</small></div>
+<div class="measure"><span>500 节点逆序边逻辑图</span><strong>11.95 → 2.53 ms</strong><small>备份 → 重构 · 单次编译中位数</small></div><a href="evals/refactor-1126-report.md">读实验设计与原始记录</a></div>
+</div></section>
+<section class="start section" id="start"><div class="wrap thirds"><div><p class="kicker">本地使用 / QUICK START</p><h2>开一张自己的画板。</h2><p class="copy">在 HumanBoard-Open 仓库目录运行。画板与版本保存在本机 SQLite，演练会在提案分支增加建议卡。</p><p class="copy"><a href="https://github.com/RayMorTwinkle/HumanBoard-Open">源代码仓库（发布目标）</a></p></div>
+<div class="terminal"><span>使用 Node.js 24</span><code>npm start</code><p>在浏览器打开 <b>http://127.0.0.1:4317</b></p><hr><span>在另一个终端运行 Agent 演练</span><code>npm run demo</code></div></div></section>
+</main><footer><div class="wrap"><strong>HumanBoard</strong><span>RayMorTwinkle · 2026</span><a href="#main">回到顶部</a></div></footer>
+</body></html>

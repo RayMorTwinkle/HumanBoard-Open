@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#182122" />
+    <title>协作地图 · HumanBoard Open</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <header class="mast">
+      <a class="brand" href="/" aria-label="HumanBoard 首页"
+        ><i class="mark" aria-hidden="true"></i>HumanBoard <span>Open</span></a
+      ><span class="local"><i></i>本地工作区</span>
+    </header>
+    <main>
+      <section class="heading">
+        <div>
+          <h1>协作地图<span>.</span></h1>
+        </div>
+        <div class="branch-controls">
+          <label for="branch">当前分支</label
+          ><select id="branch" aria-label="当前分支"></select
+          ><button id="branchNew">新建分支</button>
+        </div>
+      </section>
+      <div class="layout">
+        <section class="workspace" aria-label="可编辑画板">
+          <div class="canvasbar">
+            <span class="board-title"><i></i>画布</span
+            ><span class="minor" id="count"></span>
+            <div class="barActions">
+              <button id="add">＋ 添加卡片</button
+              ><button id="save" class="accent">提交版本</button>
+            </div>
+          </div>
+          <div class="viewport" id="viewport">
+            <div
+              id="stage"
+              class="stage"
+              role="group"
+              aria-label="画布卡片"
+            ></div>
+          </div>
+          <div class="foot">
+            <span id="status" role="status" aria-live="polite"
+              >正在读取画板…</span
+            ><button class="text-button" id="resume" hidden>
+              返回分支最新版本</button
+            ><button class="text-button" id="forkDraft" hidden>
+              另存草稿为分支
+            </button>
+          </div>
+        </section>
+        <aside class="sidebar">
+          <section class="panel editor">
+            <h2>卡片属性</h2>
+            <p id="empty" class="muted">选择画布上的卡片，即可编辑。</p>
+            <fieldset id="fields" hidden>
+              <label
+                >标题<input
+                  id="title"
+                  maxlength="80"
+                  autocomplete="off" /></label
+              ><label
+                >内容<textarea id="body" rows="3" maxlength="600"></textarea>
+              </label>
+              <div id="colors" aria-label="卡片颜色"></div>
+              <div class="position">
+                <label
+                  >横坐标<input
+                    id="x"
+                    type="number"
+                    min="0"
+                    max="800"
+                    step="1" /></label
+                ><label
+                  >纵坐标<input id="y" type="number" min="0" max="436" step="1"
+                /></label>
+              </div>
+              <button id="remove" class="text-button remove">移除卡片</button>
+            </fieldset>
+          </section>
+          <section class="panel">
+            <h2>版本树</h2>
+            <div class="merge-row">
+              <label for="source">合并来源</label
+              ><select id="source"></select
+              ><button id="merge">审阅</button>
+            </div>
+            <div id="history"></div>
+          </section>
+        </aside>
+      </div>
+    </main>
+    <dialog id="dialog">
+      <form id="dialogForm">
+        <h2 id="dialogTitle"></h2>
+        <div id="dialogContent"></div>
+        <div class="dialog-actions">
+          <button id="cancel" type="button">取消</button
+          ><button type="submit" class="accent" id="confirm">确定</button>
+        </div>
+      </form>
+    </dialog>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

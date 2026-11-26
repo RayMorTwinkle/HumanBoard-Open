@@ -1,0 +1,12 @@
+bun run typecheck | exit 0
+$ tsc --noEmit
+bun test | exit 0
+bun test v1.3.13 (bf2e2cec)
+ 374 pass
+ 0 fail
+ 2164 expect() calls
+Ran 374 tests across 67 files. [64.77s]
+bun run build | exit 0
+@humanboard/canvas-ui build: (!) Some chunks are larger than 500 kB after minification. Consider:
+@humanboard/canvas-ui build: ✓ built in 2.68s
+@humanboard/canvas-ui build: Exited with code 0

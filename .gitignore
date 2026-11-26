@@ -1,0 +1,8 @@
+.humanboard-open/
+node_modules/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+.DS_Store
+.env
+.env.*
