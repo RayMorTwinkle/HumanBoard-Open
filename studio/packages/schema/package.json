@@ -1,0 +1,18 @@
+{
+  "name": "@humanboard/schema",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./revisions": "./src/revisions.ts",
+    "./scene": "./src/scene.ts"
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^4.1.12"
+  }
+}

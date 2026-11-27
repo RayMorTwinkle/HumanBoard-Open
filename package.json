@@ -10,6 +10,10 @@
     "start": "node src/server.mjs",
     "mcp": "node src/mcp.mjs",
     "demo": "node scripts/demo.mjs",
-    "test": "node --test test/*.test.mjs"
+    "test": "node --test test/*.test.mjs",
+    "studio": "sh studio/scripts/start-studio.sh",
+    "typecheck": "cd studio && bun run typecheck",
+    "build": "cd studio && bun run build",
+    "check": "npm test && cd studio && bun install --frozen-lockfile && bun run check"
   }
 }

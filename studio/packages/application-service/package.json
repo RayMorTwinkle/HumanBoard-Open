@@ -1,0 +1,40 @@
+{
+  "name": "@humanboard/application-service",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./loopback-network": "./src/loopback-network.ts",
+    "./local-app-service": "./src/local-app-service.ts",
+    "./server-runtime": "./src/server-runtime.ts",
+    "./commit-event-bus": "./src/commit-event-bus.ts",
+    "./config": "./src/config.ts",
+    "./url-inspector": "./src/url-inspector.ts",
+    "./model-provider": "./src/model-provider.ts",
+    "./background-title-service": "./src/background-title-service.ts",
+    "./server-health": "./src/server-health.ts",
+    "./commit-sync-scheduler": "./src/commit-sync-scheduler.ts",
+    "./parser": "./src/parser.ts",
+    "./output": "./src/output.ts",
+    "./image-metadata": "./src/image-metadata.ts",
+    "./sync-client": "./src/sync-client.ts",
+    "./client-actions": "./src/client-actions.ts",
+    "./command-client": "./src/command-client.ts",
+    "./local-server-launcher": "./src/local-server-launcher.ts",
+    "./cli-info": "./src/cli-info.ts",
+    "./scene-index": "./src/scene-index.ts"
+  },
+  "dependencies": {
+    "@humanboard/core-engine": "workspace:*",
+    "@humanboard/schema": "workspace:*",
+    "@humanboard/server-self-hosted": "workspace:*",
+    "@mozilla/readability": "^0.6.0",
+    "jsdom": "^30.1.3",
+    "turndown": "^7.2.4",
+    "ulid": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^30.0.0",
+    "@types/turndown": "^5.0.6"
+  }
+}

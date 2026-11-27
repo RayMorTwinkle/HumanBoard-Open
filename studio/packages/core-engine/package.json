@@ -1,0 +1,21 @@
+{
+  "name": "@humanboard/core-engine",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./scene-svg": "./src/render/scene-svg.ts",
+    "./scene-diff-svg": "./src/render/scene-diff-svg.ts"
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@humanboard/schema": "workspace:*",
+    "@resvg/resvg-js": "^2.6.2",
+    "drizzle-orm": "^0.44.6",
+    "ulid": "^3.0.1"
+  }
+}

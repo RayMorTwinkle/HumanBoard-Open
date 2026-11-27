@@ -1,0 +1,21 @@
+{
+  "name": "@humanboard/local-studio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "start": "bun run build && bun src/server.ts"
+  },
+  "dependencies": {
+    "@humanboard/schema": "workspace:*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "ulid": "^3.0.1"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  }
+}
