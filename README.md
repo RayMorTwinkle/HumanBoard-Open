@@ -110,8 +110,6 @@ flowchart LR
 <a id="快速上手"></a>
 ## 🚀 3 分钟本地跑起来
 
-新版图工作台需 Bun 1.3，可在仓库根目录运行 `npm run studio` 一键安装、构建并启动。页面与 MCP 共用独立的 Studio 数据库，默认地址为 `http://127.0.0.1:4317`，MCP 路径为 `/mcp`，请求头为 `X-HumanBoard-Client: 1`。旧版卡片画板继续使用下方的 `npm start`，同时启动时可用 `PORT` 指定不同端口。
-
 准备 **Node.js 24**，然后在终端运行：
 
 ```sh
